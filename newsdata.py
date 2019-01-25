@@ -1,5 +1,4 @@
 #!/usr/bin/env python2
-# !/usr/bin/python2
 
 import psycopg2
 
@@ -7,6 +6,7 @@ DBNAME = "news"
 
 
 def pop_articles():
+    """Returns the top 3 most popular articles (by page views)"""s
     db = psycopg2.connect(dbname=DBNAME)
     c = db.cursor()
     c.execute("""select title, count(log.path) as num from articles,
@@ -25,6 +25,7 @@ def pop_articles():
 
 
 def pop_authors():
+    """Returns the most popular authors (by page views)"""
     db = psycopg2.connect(database=DBNAME)
     c = db.cursor()
     c.execute("""select authors.name, sum(subq.num) as total from authors,
@@ -44,6 +45,7 @@ def pop_authors():
 
 
 def req_errors():
+    """Returns the day(s) on which more than 1% of requests lead to errors"""
     db = psycopg2.connect(database=DBNAME)
     c = db.cursor()
     c.execute("""select time::date, round( 100.0 * (

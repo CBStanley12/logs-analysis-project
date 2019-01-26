@@ -71,7 +71,7 @@ def log_results(query, mode="w+"):
             f.write("\n\nDays Where More Than 1% of Requests Lead to Errors:")
             for date, perc_err in res:
                 f.write(u"\n\u2022 {} - {}% errors".format(
-                    date.strftime('%B %d %Y'), perc_err).encode('utf-8'))
+                    date.strftime('%B %d, %Y'), perc_err).encode('utf-8'))
             f.close()
         else:
             for desc, value in res:

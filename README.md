@@ -1,5 +1,5 @@
 # **Project: Logs Analysis**
-This project is a simple script that analyzes mock news data, including Articles, Authors, and Logs, in a PostgreSQL database.
+This project is a script that analyzes mock news data, including Articles, Authors, and Logs, in a PostgreSQL database.
 
 ## **Getting Started**
 
